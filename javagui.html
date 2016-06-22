@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>My Java GUI Applications</title>
+	<link rel="STYLESHEET" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37088988-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+
+<body class="mainBody">
+	<div id="container">
+		<div id="header">
+			<a href="index.html"><img src="ah2.jpg" border="0" alt="This is a banner" width="100%"></a>
+            <hr />
+		</div>
+		<div id="mainContent">
+            <table style="text-align:center; width:100%" frame="border">
+            <tr>
+                <td width="30%"><a href="index.html">Home</a></td>
+                <td width="30%"><a href="hello.html">My Profile</a></td>
+                <td width="30%"><a href="scripts.html">Scripts</a></td>
+            </tr>
+            </table>
+            <h2 style="text-align:center">Java GUI Applications</h2>
+			<h3>Sapta Samudra</h3>
+            Screenshot v0.2.0 (click to see more screenshots):<br /><br />
+            <center><img id="screenshot" src="files/SoC/screenshot v0.2.0-0.jpg" width=500 onclick="change();"></center>
+            <br />
+            <script type="text/javascript">
+            function change(){
+                img = document.getElementById("screenshot");
+                if(img.src.match(".*screenshot%20v0[.]2[.]0-0[.]jpg")){
+                    img.src = "files/SoC/screenshot v0.2.0-1.jpg";
+                } else if(img.src.match(".*screenshot%20v0[.]2[.]0-1[.]jpg")){
+                    img.src = "files/SoC/screenshot v0.2.0-2.jpg";
+                } else {
+                    img.src = "files/SoC/screenshot v0.2.0-0.jpg";
+                }
+            }
+            </script>
+            Sapta Samudra is a game adapted from PopCap Seven Seas, built as the project assignment for CS2103, Software Engineering.
+            <table style="border:1px solid black; padding:10 0 0 0; margin:10 0 0 0" width="100%">
+            <tr><td>
+            <ul>
+                <li><a href="files/SoC/Sapta Samudra v0.2.2.jar">Download latest stable Sapta Samudra (v0.2.2)</a></li>
+                <li><a href="files/SoC/save.dat">Map for puzzles</a></li>
+                <li><a href="files/SoC/User Guide.pdf">User guide on how to play Sapta Samudra</a></li>
+                <li><a href="files/SoC/Sapta Samudra Map Editor v0.1.jar">Map Editor (for advanced users)</a></li>
+            </ul>
+            You can download the Map for Puzzles (right click, "Save link as") and save it on the same folder, then play with the name
+            "Puzzle 1" (without the quotes) to play prototype of puzzle mode.
+            You will have only one life and no weapon. You will need to kill all the enemies, as usual.
+            Can you win all 5 puzzles?
+            </td></tr>
+            </table>
+            <br />
+            You can also download and play previous versions. Please note that these version may not be compatible with your current data, so it's better to play them on separate folder.
+			<ul>
+            <li><a href="files/SoC/Sapta Samudra v0.2.1.jar">Sapta Samudra v0.2.1</a></li>
+            <li><a href="files/SoC/Sapta Samudra v0.2.0.jar">Sapta Samudra v0.2.0</a></li>
+            <li><a href="files/SoC/Sapta Samudra v0.1.7.jar">Sapta Samudra v0.1.7</a></li>
+            <li><a href="files/SoC/Sapta Samudra v0.1.6.jar">Sapta Samudra v0.1.6</a></li>
+            <li><a href="files/SoC/Sapta Samudra v0.1.5.jar">Sapta Samudra v0.1.5</a></li>
+			<li><a href="files/SoC/Sapta Samudra v0.1.4.jar">Sapta Samudra v0.1.4</a></li>
+			<li><a href="files/SoC/Sapta Samudra v0.1.3.jar">Sapta Samudra v0.1.3</a></li>
+			<li><a href="files/SoC/Sapta Samudra v0.1.2.jar">Sapta Samudra v0.1.2</a></li>
+			<li><a href="files/SoC/Sapta Samudra v0.1.1.jar">Sapta Samudra v0.1.1</a></li>
+			<li><a href="files/SoC/Sapta Samudra v0.1.0.jar">Sapta Samudra v0.1.0</a></li>
+            <li><a href="files/SoC/User Guide v0.1.5.pdf">User guide v0.1.5</a></li>
+			</ul>
+            This game is brought to you by:<br />
+            Team P03: CARP, CS2103 August 2010
+            <ul>
+                <li><strong>C</strong>hristopher - AI Programmer</li>
+                <li><strong>A</strong>ldrian Obaja - Game Engine Programmer</li>
+                <li><strong>R</strong>aymond Hendy - Graphic Designer</li>
+                <li><strong>P</strong>eter Phandi - Gameplay Designer</li>
+            </ul>
+            <hr />
+            <h3>Simple Route Store</h3>
+            This is my first Java GUI program, made as the first assignment of module CS2103.<br />
+            It takes location names, and route between the registered location and then it will be able to display the distance between any two locations.
+            <ul>
+                <li><a href="files/SoC/SimpleRouteStore.jar">Download here</a></li>
+            </ul>
+			<center><a href="index.html"><span style="font-size:smaller">back to home</span></a></center>
+		</div>
+		<div id="footer">
+			<hr />
+			<p>&copy;justhalf 2016</p>
+		</div>
+	</div>
+</body>
+</html>

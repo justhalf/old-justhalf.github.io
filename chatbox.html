@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>Chatbox - Fast way to send TeX</title>
+	<link rel="STYLESHEET" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37088988-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+
+<body class="mainBody">
+	<div id="container">
+		<div id="header">
+			<a href="index.html"><img src="ah2.jpg" border="0" alt="This is a banner" width="100%"></a>
+            <hr />
+		</div>
+		<div id="mainContent">
+			<table style="text-align:center; width:100%" frame="border">
+			<tr>
+				<td width="30%"><a href="index.html">Home</a></td>
+				<td width="30%"><a href="hello.html">My Profile</a></td>
+                <td width="30%"><a href="scripts.html">Scripts</a></td>
+			</tr>
+			</table>
+			<h2>Chatbox</h2>
+			Chatbox is an independent project created from seeing the needs of explaining complex mathematical notation through chatting.
+			This application will also helps people to see different approach to produce the same or similar TeX result<br /><br />
+			<span style="font-weight:bold">21 May 2011</span> - Currently this Chatbox v1.7 is only a prototype, hence the layout is not as well-designed as it should be. Just wait for more update!<br />
+			<span style="font-weight:bold">7 June 2011</span> - Updating to the version 1.8, where the TeX is displayed directly in the message window
+            <table style="border:1px solid black; padding:10 0 0 0; margin:10 0 0 0" width="100%">
+            <tr><td>
+            <ul>
+                <li><a href="chatbox/Chatbox v1.8.jar">Download Chatbox v1.8</a></li>
+                <li><a href="chatbox-guide.html">User guide on how to use Chatbox</a></li>
+				<li><a href="chatbox/changelog.html">Changelog</a></li>
+            </ul>
+            </td></tr>
+            </table>
+			<br /><br />
+            Screenshot v1.8 (click to see more screenshots):<br /><br />
+            <div class="screenshot-holder">
+				<div id="explanation" style="font-weight:bold; font-size:larger">The main view of Chatbox</div>
+				<br />
+				<img style="cursor:hand" id="screenshot" src="chatbox/mainview1.8.PNG" alt="0" onclick="change();">
+			</div>
+            <br />
+            <script type="text/javascript">
+            function change(){
+                img = document.getElementById("screenshot");
+                if(img.alt=="0"){
+                    img.src = "chatbox/login1.8.PNG";
+					img.alt = "1";
+					document.getElementById("explanation").innerHTML = "The login view of Chatbox";
+                } else if(img.alt=="1"){
+                    img.src = "chatbox/loginprogress1.8.PNG";
+					img.alt = "2";
+					document.getElementById("explanation").innerHTML = "The logging in in progress";
+				} else if(img.alt=="2"){
+					img.src = "chatbox/usage1.8.PNG";
+					img.alt = "3";
+					document.getElementById("explanation").innerHTML = "One sample usage";
+				} else if(img.alt=="3"){
+					img.src = "chatbox/mainview1.8.PNG";
+					img.alt = "0";
+					document.getElementById("explanation").innerHTML = "The main view of Chatbox";
+				}
+            }
+            </script>
+			<br />
+			<h3>Use of external library</h3>
+			The Java API for TeX Compiler from <a href="http://forge.scilab.org/index.php/p/jlatexmath/">JLaTeXMath</a> is used<br />
+			Please refer to the website for more information on the TeX compiler, what's available for rendering and what's not supported yet
+            <br /><br />
+            This application is brought to you by:<br />
+            justhalf in May 2011
+            <hr />
+			<center><a href="index.html"><span style="font-size:smaller">back to home</span></a></center>
+		</div>
+		<div id="footer">
+			<hr />
+			<p>&copy;justhalf 2016</p>
+		</div>
+	</div>
+</body>
+</html>

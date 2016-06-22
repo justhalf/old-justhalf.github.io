@@ -1,0 +1,216 @@
+<html>
+<head>
+	<title>Aldrian Obaja's Homepage</title>
+	<link rel="STYLESHEET" type="text/css" href="style.css">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+	// Script taken from http://xantorohara.blogspot.com/2007/08/howto-move-objects-within-html-page-via.html
+	var posx;
+    var posy;
+    var zMax = 0;
+    var obj;
+
+    function drag_start(itemToMove, e)
+    {
+        itemToMove.style.zIndex = ++window.zMax;
+        if (!e) e = window.event;
+        obj = itemToMove;
+        posx = e.clientX - parseInt(obj.style.left);
+        posy = e.clientY - parseInt(obj.style.top);
+        itemToMove.style.cursor="move";
+        if (e.preventDefault) e.preventDefault();
+        else e.returnValue = false;
+    }
+
+    function drag_stop(e)
+    {
+        if (obj) {
+            obj.style.cursor="default";            
+            obj = null;
+        }
+    }
+
+    function drag(e)
+    {
+        if (!obj) return;
+
+        if (!e) e = window.event;
+
+        var height, width;
+        if (document.all)
+        {
+            height = document.body.offsetHeight;
+            width = document.body.offsetWidth;
+        }
+        else if (document.layers)
+        {
+            height = window.innerHeight;
+            width = window.innerWidth;
+        }
+        var newX = e.clientX - posx;
+        var newY = e.clientY - posy;
+        if (newX < -obj.clientWidth / 2)
+        {
+            newX = -obj.clientWidth / 2;
+            posx = e.clientX - parseInt(obj.style.left);
+        }
+        if (newY < -obj.clientHeight / 2)
+        {
+            newY = -obj.clientHeight / 2;
+            posy = e.clientY - parseInt(obj.style.top);
+        }
+
+        obj.style.left = newX;
+        obj.style.top = newY;
+
+        if (e.preventDefault) e.preventDefault();
+        else e.returnValue = false;
+    }
+
+    document.onmousemove = drag;
+    document.onmouseup = drag_stop;
+
+    document.ondragstart = function()
+    {
+        return false;
+    }
+    document.onselectstart = function()
+    {
+        return false;
+    }
+	</script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37088988-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+
+<body class="mainBody">
+    <div class="hamster" style="position:absolute; left:0; top:0; border-style:solid; border-width:1px">
+        <object type="application/x-shockwave-flash" style="outline:none;" data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="300" height="225"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?"></param><param name="AllowScriptAccess" value="always"></param><param name="wmode" value="opaque"></param></object>
+        <div style="background:white; text-align:left; width:300;" onmousedown="drag_start(this.parentNode,event)">
+            Play with my hamster, Hampu!
+            <ul>
+            <li>Feed it by clicking on the screen</li>
+            <li>Throw the food</li>
+            <li>Make it follows you</li>
+            <li>Make it runs by clicking the center of the wheel</li>
+            <li>It will drink from time to time</li>
+            <li>It will sleep after awhile</li>
+            </ul>
+			<span style="font-size:smaller">
+				Note: You can drag this box around<br /><br />
+			</span>
+            <span style="font-size:x-small">
+                DISCLAIMER: This is not made by me, click on the name <a href="http://abowman.com/google-modules/hamster/#gadgetSWF">aBowman</a> on the top right of the screen to see the original media and put on your own website!
+            </span>
+        </div>
+    </div> <!-- END OF HAMSTER -->
+    <div id="container">
+		<div id="header" style="padding=0; margin=0">
+			<a href="index.html"><img src="ah2.jpg" border="0" alt="This is a banner" width="100%"></a>
+			<hr style="margin-top:0px">
+		</div><!-- END OF HEADER -->
+		<div id="mainContent">
+			<table style="text-align:center; width:100%" frame="border">
+			<tr>
+				<td width="30%"><a href="index.html">Home</a></td>
+				<td width="30%"><a href="hello.html">My Profile</a></td>
+                <td width="30%"><a href="scripts.html">Scripts</a></td>
+			</tr>
+			</table>
+			<br />
+			<table border="0" width="100%" class="mainTable">
+			<tr>
+				<td colspan=3 class="center">
+					<h3>Latest update: <a href="chatbox.html">Chatbox v1.8</a></h3>
+				</td>
+			</tr>
+			<tr>
+                <td colspan=1>
+                    <div class="stickyNotes center verticalStretch">
+                        My GitHub page
+                        <div style="margin:10px">
+                            <!-- Place this tag where you want the button to render. -->
+                            <a class="github-button" href="https://github.com/justhalf" data-style="mega" aria-label="Follow @justhalf on GitHub">Follow @justhalf</a>
+                        </div>
+                    </div>
+                </td>
+				<td colspan=2 class="facebook" style="padding: 5px">
+				<!-- Facebook Badge START --><a href="https://www.facebook.com/Just.Half" title="Aldrian Obaja" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" target="_TOP">Aldrian Obaja</a><span style="font-family: &#039;lucida grande&#039;,tahoma,verdana,arial,sans-serif;font-size: 11px;line-height: 16px;font-variant: normal;font-style: normal;font-weight: normal;color: #555555;text-decoration: none;">&nbsp;|&nbsp;</span><a href="https://www.facebook.com/badges/" title="Make your own badge!" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" target="_TOP">Create Your Badge</a><br /><a href="https://www.facebook.com/Just.Half" title="Aldrian Obaja" target="_TOP"><img class="img" src="https://badge.facebook.com/badge/1215638490.345.1772547374.png" style="border: 0px; max-height:70px" alt="" /></a><!-- Facebook Badge END -->
+                </td>
+			</tr>
+            <tr>
+                <td colspan="1">
+                    <div class="stickyNotes center verticalStretch">
+                        <span><a href="javagui.html">My Java GUI Applications</a></span>
+                    </div>
+                </td>
+                <td colspan="2">
+                    <div class="stickyNotes center verticalStretch">
+                        <span><a href="chatbox.html">Chatbox: Simple way to send TeX</a></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="stickyNotes center verticalStretch">
+                        <span><span style="color:red">(inactive)</span>A Chrome extension: <a href="chrome-extension/YMailBold/index.html">Yahoo! Mail Folder Bolder</a></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="stickyNotes center verticalStretch">
+                        <span><a href="http://www.sublimetext.com/2">Sublime Text</a> is a great tool for editing text</span>
+                    </div>
+                </td>
+            </tr>
+			<tr>
+				<td colspan="1">
+					<div class="stickyNotes center verticalStretch">
+						<span><a href="GEK1517.html">GEK 1517</a></span>
+					</div>
+				</td>
+				<td colspan="2">
+					<div class="stickyNotes center verticalStretch">
+						<span><a href="Java">My Java Codes</a> during my first year in NUS</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div class="stickyNotes center verticalStretch">
+						<span><a href="Java/selfReproduce.java">A Java code that output the code itself!</a> (i.e., a <a href="https://en.wikipedia.org/wiki/Quine_(computing)">quine</a>)</span>
+					</div>
+				</td>
+			</tr>
+            <tr>
+                <td colspan="3">
+                    <div class="stickyNotes center verticalStretch">
+                        <span><a href="CS2102">CS2102, Database System: Website Development Project</a></span>
+                    </div>
+                </td>
+            </tr>
+			</table>
+			<br />
+		</div><!-- END OF MAIN CONTAINER -->
+		<div id="footer">
+			<hr />
+            <p style="float:right">banner image by: <a href="http://www.facebook.com/verlinkurnia">Verlin Kurnia</a></p>
+			<p>&copy;2009-2016, by Aldrian Obaja</p>
+		</div><!-- END OF FOOTER -->
+	</div> <!-- END OF CONTAINER -->
+</body>
+</html>
