@@ -1,0 +1,155 @@
+<html>
+<head>
+	<title>Scripts</title>
+	<link rel="STYLESHEET" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37088988-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+         /* JS Implementation of MurmurHash3 (r136) (as of May 20, 2011)
+         *
+         * @author <a href="mailto:gary.court@gmail.com">Gary Court</a>
+         * @see http://github.com/garycourt/murmurhash-js
+         * @author <a href="mailto:aappleby@gmail.com">Austin Appleby</a>
+         * @see http://sites.google.com/site/murmurhash/
+         *
+         * @param {string} key ASCII only
+         * @param {number} seed Positive integer only
+         * @return {number} 32-bit positive integer hash
+         */
+
+        function murmurhash3_32_gc(key, seed) {
+            var remainder, bytes, h1, h1b, c1, c1b, c2, c2b, k1, i;
+
+            remainder = key.length & 3; // key.length % 4
+            bytes = key.length - remainder;
+            h1 = seed;
+            c1 = 0xcc9e2d51;
+            c2 = 0x1b873593;
+            i = 0;
+
+            while (i < bytes) {
+                k1 =
+                  ((key.charCodeAt(i) & 0xff)) |
+                  ((key.charCodeAt(++i) & 0xff) << 8) |
+                  ((key.charCodeAt(++i) & 0xff) << 16) |
+                  ((key.charCodeAt(++i) & 0xff) << 24);
+                ++i;
+
+                k1 = ((((k1 & 0xffff) * c1) + ((((k1 >>> 16) * c1) & 0xffff) << 16))) & 0xffffffff;
+                k1 = (k1 << 15) | (k1 >>> 17);
+                k1 = ((((k1 & 0xffff) * c2) + ((((k1 >>> 16) * c2) & 0xffff) << 16))) & 0xffffffff;
+
+                h1 ^= k1;
+                h1 = (h1 << 13) | (h1 >>> 19);
+                h1b = ((((h1 & 0xffff) * 5) + ((((h1 >>> 16) * 5) & 0xffff) << 16))) & 0xffffffff;
+                h1 = (((h1b & 0xffff) + 0x6b64) + ((((h1b >>> 16) + 0xe654) & 0xffff) << 16));
+            }
+
+            k1 = 0;
+
+            switch (remainder) {
+                case 3: k1 ^= (key.charCodeAt(i + 2) & 0xff) << 16;
+                case 2: k1 ^= (key.charCodeAt(i + 1) & 0xff) << 8;
+                case 1: k1 ^= (key.charCodeAt(i) & 0xff);
+
+                k1 = (((k1 & 0xffff) * c1) + ((((k1 >>> 16) * c1) & 0xffff) << 16)) & 0xffffffff;
+                k1 = (k1 << 15) | (k1 >>> 17);
+                k1 = (((k1 & 0xffff) * c2) + ((((k1 >>> 16) * c2) & 0xffff) << 16)) & 0xffffffff;
+                h1 ^= k1;
+            }
+
+            h1 ^= key.length;
+
+            h1 ^= h1 >>> 16;
+            h1 = (((h1 & 0xffff) * 0x85ebca6b) + ((((h1 >>> 16) * 0x85ebca6b) & 0xffff) << 16)) & 0xffffffff;
+            h1 ^= h1 >>> 13;
+            h1 = ((((h1 & 0xffff) * 0xc2b2ae35) + ((((h1 >>> 16) * 0xc2b2ae35) & 0xffff) << 16))) & 0xffffffff;
+            h1 ^= h1 >>> 16;
+
+            return h1 >>> 0;
+        }
+
+      function showRandom(){
+          var min = parseInt(document.getElementById("minint").value);
+          var max = parseInt(document.getElementById("maxint").value);
+          var date = document.getElementById("date").value;
+          var hash = murmurhash3_32_gc(date, 31);
+          var result = (hash % (max-min)) + min;
+          document.getElementById("result").innerHTML = result;
+      }
+
+      document.addEventListener("DOMContentLoaded", function(event) { 
+          var url = new URL(window.location.href);
+          var min = parseInt(url.searchParams.get("min"));
+          var max = parseInt(url.searchParams.get("max"));
+          var date = url.searchParams.get("date");
+          if (!min){
+              min = 1;
+          }
+          if (!max){
+              max = 6;
+          }
+          if (!date){
+              dateObj = new Date();
+              year = dateObj.getYear()+1900;
+              month = (dateObj.getMonth()+1) + "";
+              if (month.length == 1){
+                  month = "0"+month;
+              }
+              day = (dateObj.getDate()+"");
+              if (day.length == 1){
+                  day = "0"+day;
+              }
+              date = "" + year + "-" + month + "-" + day;
+              console.log(date);
+          }
+          document.getElementById("minint").value = min;
+          document.getElementById("maxint").value = max;
+          document.getElementById("date").value = date;
+          showRandom();
+      });
+
+	</script>
+</head>
+
+<body class="mainBody">
+	<div id="container">
+		<div id="header">
+			<a href="index.html"><img src="ah2.jpg" border="0" alt="This is a banner" width="100%"></a>
+            <hr />
+		</div>
+		<div id="mainContent">
+            <table style="text-align:center; width:100%" frame="border">
+            <tr>
+                <td width="30%"><a href="index.html">Home</a></td>
+                <td width="30%"><a href="hello.html">My Profile</a></td>
+                <td width="30%"><a href="scripts.html">Scripts</a></td>
+            </tr>
+            </table>
+            <h2 style="text-align:center">Random Number from Date</h2>
+            <p>Generate a random number from a date, with the specified minimum and maximum range of integers.</p>
+            <form>
+                Min: <input id="minint" type="number" name="minint" value=1 onchange="javascript:showRandom();" />
+                Max: <input id="maxint" type="number" name="maxint" value=6 onchange="javascript:showRandom();" />
+                Text: <input id="date" type="date" name="date" value="2018-11-09" onchange="javascript:showRandom()" /><br>
+            </form>
+            <h1 id="result" style="text-align:center; font-size:120pt">0</h1>
+			<div style="text-align:center; margin-top:10px"><a href="index.html"><span style="font-size:smaller">back to home</span></a></div>
+		</div>
+		<div id="footer">
+			<hr />
+			<p>&copy;justhalf 2016</p>
+		</div>
+	</div>
+</body>
+</html>
