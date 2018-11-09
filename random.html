@@ -86,6 +86,7 @@
           var hash = murmurhash3_32_gc(date, 31);
           var result = (hash % (max-min)) + min;
           document.getElementById("result").innerHTML = result;
+          console.log(hash);
       }
 
       document.addEventListener("DOMContentLoaded", function(event) { 
